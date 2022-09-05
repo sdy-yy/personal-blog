@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="sdy">
+        <!-- v-on的使用 -->
+        <button v-on:click="add++">{{add}}</button>
+        <!-- v-on的缩写 -->
+        <button @click="add++">{{add}}</button>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        new Vue({
+            el: "#sdy",
+            data: {
+                add: 1,
+                arr: [{ name: 'first' }, { name: 'second' }, { name: 'third' }],
+                name: "hhhhh",
+                src: "https://img-blog.csdnimg.cn/3d0a69fa112e47399fc6f1ff8ec721d5.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAc2V2ZW4ubG92ZXI=,size_20,color_FFFFFF,t_70,g_se,x_16"
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -24,14 +24,15 @@
     </div>
     <script>
         //表示vue控制id=sdy的元素
-        new Vue({
+        var a = new Vue({
             el: "#sdy",
             data: {
                 products: [
                     { name: 'hat', stock: 10 },
                     { name: 'shoe', stock: 10 },
                     { name: 'pants', stock: 10 }
-                ]
+                ],
+                name: 'sdy'
             },
             methods: {
                 changeStock(item, newStock) {
@@ -53,7 +54,8 @@
                     })
                     return total;
                 }
-            }
+            },
+            template: `<div>${this.name}123</div>`
         });
     </script>
 </body>
