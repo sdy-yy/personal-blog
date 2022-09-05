@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="./vue.js"></script>
+    <h1>商品管理</h1>
+    <div id="sdy">
+        <h2>库存</h2>
+        <div v-for="(item,i) in products">
+            <div> 商品:{{item.name}} 数量{{item.stock==0?"无货":item.stock}}</div>
+            <button @click="changeStock(item,item.stock+1)">+</button>
+            <button @click="changeStock(item,item.stock-1)">-</button>
+            <button @click="delet(i)">删除</button>
+        </div>
+        <p>商品总库存：{{total}}</p>
+
+    </div>
+    <script>
+        //表示vue控制id=sdy的元素
+        new Vue({
+            el: "#sdy",
+            data: {
+                products: [
+                    { name: 'hat', stock: 10 },
+                    { name: 'shoe', stock: 10 },
+                    { name: 'pants', stock: 10 }
+                ]
+            },
+            methods: {
+                changeStock(item, newStock) {
+                    if (newStock < 0) {
+                        newStock = 0;
+                    }
+                    item.stock = newStock;
+                },
+                //删除商品
+                delet(index) {
+                    this.products.splice(index, 1);
+                }
+            },
+            computed: {
+                total() {
+                    let total = 0;
+                    this.products.forEach((ele, index) => {
+                        total += ele.stock;
+                    })
+                    return total;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
