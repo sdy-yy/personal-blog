@@ -17,6 +17,14 @@
     </div>
     <script src="./vue.js"></script>
     <script>
+        var module1 = {
+            data() {
+                return {
+                    name: '宋丹阳'
+                }
+            },
+            template: `<div>{{name}}</div>`
+        };
         new Vue({
             el: "#sdy",
             data: {
@@ -24,6 +32,12 @@
                 arr: [{ name: 'first' }, { name: 'second' }, { name: 'third' }],
                 name: "hhhhh",
                 src: "https://img-blog.csdnimg.cn/3d0a69fa112e47399fc6f1ff8ec721d5.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAc2V2ZW4ubG92ZXI=,size_20,color_FFFFFF,t_70,g_se,x_16"
+            },
+            components: {
+                module1
+            },
+            render(h) {
+                return h(module1);
             }
         })
     </script>

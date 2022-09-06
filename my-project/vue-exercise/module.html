@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script src="./vue.js"></script>
+    <script>
+        // props也会被注入
+        var module = {
+            props: ["first", "second", "third"],
+            template: `<div>{{first}}</div>`
+        }
+
+
+        var a = new Vue({
+            el: "#app",
+            data: {
+                c: 100
+            },
+            components: {
+                module
+            },
+            template: `<div><module first="德玛西亚必胜" /></div>`,
+        })
+    </script>
+</body>
+
+</html>
