@@ -5,9 +5,8 @@ import store from './store'
 
 
 new Vue({
-  data: {
-    name: 'sdy'
-  },
+
   store,
   render: h => h(App)
 }).$mount('#app')
+

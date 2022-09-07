@@ -5,11 +5,12 @@
 </template>
 
 <script>
+
 export default {
   props: {
     src: {
       type: String,
-      require: true
+      required: true
     },
     width: {
       type: Number,
@@ -19,11 +20,12 @@ export default {
       type: Number,
       default: 50
     }
-  }
+  },
+  template: `<div>123</div>`
 };
 </script>
 
-<style lang='less'>
+<style scoped>
 .imgSize {
   border-radius: 50%;
   object-fit: cover;
