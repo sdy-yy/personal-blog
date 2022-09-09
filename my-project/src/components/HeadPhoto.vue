@@ -1,11 +1,10 @@
 <template>
-  <div class="head-photo">
+  <div class="headPhoto-container">
     <img class="imgSize" :src="src" :style="{width:width+'px',height:height+'px'}" />
   </div>
 </template>
 
 <script>
-
 export default {
   props: {
     src: {
