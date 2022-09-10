@@ -1,27 +1,10 @@
 <template>
-  <div id="app">
-    <Pager @handleChild="handle" :current="current" />
-  </div>
+  <div id="app"></div>
 </template>
 <script>
-import Pager from "@/components/Pager.vue";
 export default {
-  data() {
-    return {
-      current: 1
-    };
-  },
-  components: {
-    Pager
-  },
-  methods: {
-    handle(a) {
-      if (a == this.current) {
-        return;
-      }
-      this.current = a;
-    }
-  }
+  components: {},
+  methods: {}
 };
 </script>
 <style scoped lang="less">
