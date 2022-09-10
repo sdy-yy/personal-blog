@@ -1,9 +1,14 @@
 <template>
-  <div id="app"></div>
+  <div id="app">
+    <Menu />
+  </div>
 </template>
 <script>
+import Menu from "@/components/nav/components/Menu.vue";
 export default {
-  components: {},
+  components: {
+    Menu
+  },
   methods: {}
 };
 </script>
