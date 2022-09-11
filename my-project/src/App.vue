@@ -1,15 +1,20 @@
 <template>
   <div id="app">
-    <Menu />
+    <Layout>
+      <template #menu>
+        <Menu />
+      </template>
+      <template #main>
+        
+      </template>
+    </Layout>
   </div>
 </template>
 <script>
-import Menu from "@/components/nav/components/Menu.vue";
+import Layout from "@/Layout/index.vue";
+import Menu from "@/components/Menu.vue";
 export default {
-  components: {
-    Menu
-  },
-  methods: {}
+  components: { Layout, Menu }
 };
 </script>
 <style scoped lang="less">
