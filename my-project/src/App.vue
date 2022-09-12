@@ -5,7 +5,7 @@
         <Menu />
       </template>
       <template #main>
-        
+        <router-view></router-view>
       </template>
     </Layout>
   </div>

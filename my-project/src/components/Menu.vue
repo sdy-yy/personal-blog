@@ -1,11 +1,11 @@
 <template>
   <div class="menu-container">
-    <a
-      :class="{active:isKeyMh(item)}"
+    <RouterLink
+      :exact="item.dim"
       v-for="(item,i) in nav"
       :key="i"
-      :href="item.link"
-    >{{item.title}}</a>
+      :to="{name:item.id}"
+    >{{item.title}}</RouterLink>
   </div>
 </template>
 
@@ -14,27 +14,16 @@ export default {
   data() {
     return {
       nav: [
-        { link: "/", title: "首页", dim: false },
-        { link: "/article", title: "文章", dim: true },
-        { link: "/message", title: "留言", dim: false },
-        { link: "/project", title: "项目", dim: false },
-        { link: "/author", title: "作者", dim: false }
-      ],
-      isKey: false
+        //dim是否精确匹配
+        { title: "首页", dim: true, id: "Home" },
+        { title: "文章", dim: false, id: "Article" },
+        { title: "留言", dim: true, id: "Message" },
+        { title: "项目", dim: true, id: "Project" },
+        { title: "作者", dim: true, id: "Author" }
+      ]
     };
   },
-  methods: {
-    isKeyMh(h) {
-      let argSrc = h.link;
-      let newSrc = location.pathname;
-      if (h.dim && newSrc.startsWith(argSrc)) {
-        return true;
-      }
-      if (argSrc === newSrc) {
-        return true;
-      }
-    }
-  }
+  methods: {}
 };
 </script>
 
@@ -57,7 +46,9 @@ export default {
       background: white;
       border-radius: 5px;
     }
-    &.active {
+
+    &.router-link-active,
+    &.router-link-exact-active {
       font-weight: 700;
       color: black;
     }
