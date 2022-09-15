@@ -52,7 +52,6 @@ export default {
   },
   methods: {
     handlePagerData(data) {
-      console.log("run");
       //抛出
       this.$emit("handleChild", data);
     }

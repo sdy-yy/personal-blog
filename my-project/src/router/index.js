@@ -9,9 +9,7 @@ Vue.use(VueRouter);
 //配置路由
 export default new VueRouter({
     routes: [
-        {
-            path: "/", component: Home, name: "Home"
-        },
+        { path: "/", component: Home, name: "Home" },
         { path: "/article", component: Article, name: "Article" },
         { path: '/message', component: Message, name: "Message" },
         { path: "/author", component: Author, name: "Author" },

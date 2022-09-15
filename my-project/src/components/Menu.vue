@@ -1,5 +1,5 @@
 <template>
-  <div class="menu-container">
+  <div class="menu-container" ref="key">
     <RouterLink
       :exact="item.dim"
       v-for="(item,i) in nav"
@@ -22,8 +22,7 @@ export default {
         { title: "作者", dim: true, id: "Author" }
       ]
     };
-  },
-  methods: {}
+  }
 };
 </script>
 
@@ -46,9 +45,7 @@ export default {
       background: white;
       border-radius: 5px;
     }
-
-    &.router-link-active,
-    &.router-link-exact-active {
+    &.router-link-active {
       font-weight: 700;
       color: black;
     }

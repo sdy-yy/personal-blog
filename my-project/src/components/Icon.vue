@@ -5,7 +5,8 @@
 <script>
 const classStyleMap = {
   weixin: "icon-weixin",
-  qq: "icon-QQ"
+  qq: "icon-QQ",
+  empty: "icon-empty"
 };
 export default {
   props: {
@@ -23,5 +24,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>

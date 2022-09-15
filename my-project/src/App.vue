@@ -2,7 +2,7 @@
   <div id="app">
     <Layout>
       <template #menu>
-        <Menu />
+        <Menu ref="hah" />
       </template>
       <template #main>
         <router-view></router-view>
@@ -14,7 +14,9 @@
 import Layout from "@/Layout/index.vue";
 import Menu from "@/components/Menu.vue";
 export default {
-  components: { Layout, Menu }
+  components: { Layout, Menu },
+  mounted() {
+  }
 };
 </script>
 <style scoped lang="less">

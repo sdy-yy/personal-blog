@@ -22,8 +22,18 @@ export default {};
 </script>
 
 <style lang='less' scoped>
+.nav {
+  position: fixed;
+  width: 100%;
+  height: 52px;
+}
 .body {
+  top: 52px;
+  height: calc(100% - 52px);
+  width: 100%;
+  position: fixed;
   display: flex;
+
   .main {
     flex: 1 0 auto;
   }
